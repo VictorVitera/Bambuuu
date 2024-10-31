@@ -1,0 +1,30 @@
+/* button-delete.component.scss */
+.home-com-projetos-container {
+  padding-bottom: 60px; // Espaço extra para o botão fixo não cobrir o conteúdo
+}
+
+.button-delete-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.selected-count {
+  font-size: 16px;
+  color: #000000;
+}
+
+.delete-button {
+  background-color: #A34725;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  text-transform: uppercase;
+}

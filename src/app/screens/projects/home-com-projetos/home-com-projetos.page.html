@@ -1,0 +1,27 @@
+<ToolbarVoltar
+  [title]="'Projetos'"
+  [defaultHref]="'/dados-ambiente'"
+></ToolbarVoltar>
+
+<ion-content class="home-com-projetos-container">
+  <div class="toolbar">
+    <button *ngIf="!modoExclusao" (click)="ativarModoExclusao()">Deletar</button>
+    <button *ngIf="!modoExclusao">Adicionar</button>
+
+    <div *ngIf="modoExclusao" class="selecionados-info">
+      <span>{{ projetosSelecionados.length }} selecionado(s)</span>
+      <button (click)="deletarSelecionados()">Excluir</button>
+      <button (click)="desativarModoExclusao()">Cancelar</button>
+    </div>
+  </div>
+
+  <!-- Lista de ProjectCards -->
+  <ProjectCard
+    [projectTitle]="project.title"
+    [startDate]="project.startDate"
+    [endDate]="project.endDate"
+    [progress]="project.progress"
+    [modoExclusao]="modoExclusao"
+    (checkboxChange)="atualizarSelecionados($event, project.title)"
+  ></ProjectCard>
+</ion-content>

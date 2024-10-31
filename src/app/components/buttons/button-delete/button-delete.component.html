@@ -1,0 +1,37 @@
+<!-- button-delete.component.html -->
+<ToolbarVoltar [title]="'Projetos'" [defaultHref]="'/dados-ambiente'"></ToolbarVoltar>
+
+<ion-content class="home-com-projetos-container">
+  <!-- Lista de projetos com checkbox -->
+  <div *ngFor="let projeto of projetos" class="project-card">
+    <ion-checkbox
+      slot="start"
+      (ionChange)="toggleSelection(projeto)"
+      [checked]="projeto.selected"
+    ></ion-checkbox>
+    <ion-text class="title">• {{ projeto.nome }}</ion-text>
+
+    <div class="progress-container">
+      <ion-text class="phase-text">{{ projeto.fase }}</ion-text>
+      <ion-text class="progress-text">{{ projeto.progresso }}%</ion-text>
+    </div>
+
+    <ion-progress-bar [value]="projeto.progresso / 100" color="tertiary"></ion-progress-bar>
+
+    <ion-text class="date-text">Início: {{ projeto.inicio }}</ion-text>
+    <ion-text class="date-text">Previsão de entrega: {{ projeto.entrega }}</ion-text>
+
+    <ion-button fill="clear" href="/tela-sobre-projetos">
+      <ion-icon slot="start" name="information-circle-outline"></ion-icon>
+      Mais informações
+    </ion-button>
+
+    <ButtonInfo href="/tela-sobre-projetos" imgSource="assets/icons/iconInfo.png"></ButtonInfo>
+  </div>
+
+  <!-- Contador e botão de exclusão -->
+  <div class="button-delete-container">
+    <ion-text class="selected-count">Selecionados: {{ selectedCount }}</ion-text>
+    <button class="delete-button" (click)="deleteSelected()">Excluir Selecionados</button>
+  </div>
+</ion-content>

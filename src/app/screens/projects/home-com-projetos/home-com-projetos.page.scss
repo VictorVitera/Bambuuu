@@ -1,0 +1,83 @@
+.home-com-projetos-container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+
+    button {
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .selecionados-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      span {
+        font-size: 16px;
+        color: #4f4f4f;
+      }
+    }
+  }
+
+  .project-card {
+    width: 90%;
+    background-color: #007bff;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .progress-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+
+      .phase-text,
+      .progress-text {
+        font-size: 14px;
+        color: #ffffff;
+      }
+    }
+
+    ion-progress-bar {
+      width: 100%;
+      margin-bottom: 10px;
+      --height: 20px;
+      --background: #cc8879;
+    }
+
+    .date-text {
+      font-size: 14px;
+      color: #ffffff;
+    }
+
+    ion-button {
+      --color: #ffffff;
+    }
+  }
+}
